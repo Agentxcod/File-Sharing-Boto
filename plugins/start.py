@@ -83,20 +83,7 @@ async def start_command(client: Client, message: Message):
                 await msg.copy(chat_id=message.from_user.id, caption = caption, parse_mode = ParseMode.HTML, reply_markup = reply_markup, protect_content=PROTECT_CONTENT)
             except:
                 pass
-        return
-    else:
-        reply_markup = InlineKeyboardMarkup(
-            [          
-                [
-                    InlineKeyboardButton( "Main Channel", url = "https://t.me/InkaLinks" ),
-                    InlineKeyboardButton("Source Code", url = "https://t.me/+nrNgQ7sT3XQxZTc1")
-                ], [ InlineKeyboardButton("Bot Update", url = "https://t.me/Publicfille") ],
-                [
-                    InlineKeyboardButton("🤖 About Me", callback_data = "about"),
-                    InlineKeyboardButton("🔒 Close", callback_data = "close")
-                ]
-            ]
-        )
+        return 
         await message.reply_text(
             text = START_MSG.format(
                 first = message.from_user.first_name,
